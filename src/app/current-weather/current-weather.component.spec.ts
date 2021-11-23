@@ -57,7 +57,7 @@ describe('CurrentWeatherComponent', () => {
     expect(component.current.temperature).toEqual(280.32);
     // Assert on DOM
     const debugEl = fixture.debugElement;
-    const titleEl: HTMLElement = debugEl.query(By.css('span')).nativeElement;
+    const titleEl: HTMLElement = debugEl.query(By.css('.mat-title')).nativeElement;
     expect(titleEl.textContent).toContain('Yaoundé');
   });
 });

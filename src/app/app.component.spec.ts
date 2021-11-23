@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { createComponentMock } from 'angular-unit-test-helper';
+import { MaterialModule } from './material.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
         AppComponent,
         createComponentMock('CurrentWeatherComponent')
       ],
+      imports: [ MaterialModule ]
     }).compileComponents();
   });
 
@@ -22,6 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('LocalCast Weather');
+    expect(compiled.querySelector('span')?.textContent).toContain('LocalCast Weather');
   });
 });
